@@ -6,6 +6,23 @@ networks:
 
 services:
 
+  postgresql:
+    container_name: ${PROJECT_NAME}-postgresql
+    hostname: ${PROJECT_NAME}-postgresql
+    image: postgres:15
+    restart: always
+    build:
+      context: ./
+    env_file:
+      - .docker/dev/postgresql/config.ini
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data/
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+    networks:
+      - fastapi-network
+    tty: true
+
   redis:
     container_name: ${PROJECT_NAME}-redis
     hostname: ${PROJECT_NAME}-redis
