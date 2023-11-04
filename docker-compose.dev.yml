@@ -6,60 +6,21 @@ networks:
 
 services:
 
-  backend:
-    container_name: ${PROJECT_NAME}
-    restart: unless-stopped
-    build:
-      context: ./
-      dockerfile: .docker/dev/backend/Dockerfile
-    env_file:
-      - .dev.env
-    volumes:
-      - ./:/home/app/backend
-    ports:
-      - ${PORT:-8000}:8000
-    depends_on:
-      - postgresql
-    networks:
-      - fastapi-network
-
-  postgresql:
-    container_name: fast-api-base-project
-    hostname: fast-api-base-project
-    image: postgres:15
-    restart: always
-    build:
-      context: ./
-    env_file:
-      - .dev.env
-      - .docker/dev/postgresql/config.ini
-    volumes:
-      - postgresql_data:/var/lib/postgresql/data/
-    ports:
-      - ${POSTGRES_PORT:-5432}:5432
-    networks:
-      - fastapi-network
-    tty: true
-
   redis:
     container_name: ${PROJECT_NAME}-redis
-    hostname: ${PROJECT_NAME}-redis
     image: redis:alpine
+    hostname: ${PROJECT_NAME}-redis
     env_file:
-      - .dev.env
-#      - .docker/dev/redis/config.ini
+      - .docker/dev/redis/config.ini
     ports:
       - ${REDIS_PORT:-6379}:6379
     volumes:
-      - redis-data:/usr/local/etc/redis
-#      - .docker/dev/redis/sysctl.conf:/etc/sysctl.conf
+      - redis:/data
     tty: true
     restart: unless-stopped
     networks:
       - fastapi-network
 
 volumes:
-  redis-data:
-    driver: local
-  postgresql_data:
+  redis:
     driver: local
