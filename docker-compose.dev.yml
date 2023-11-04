@@ -11,7 +11,7 @@ services:
     image: redis:alpine
     hostname: ${PROJECT_NAME}-redis
     env_file:
-      - .docker/dev/redis/config.ini
+      - .dev.env
     ports:
       - ${REDIS_PORT:-6379}:6379
     volumes:
