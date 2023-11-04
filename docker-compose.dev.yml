@@ -44,7 +44,7 @@ services:
 
   redis:
     container_name: ${PROJECT_NAME}
-    hostname: ${PROJECT_NAME}-redis
+    hostname: ${PROJECT_NAME}
     image: redis:alpine
     env_file:
       - .dev.env
