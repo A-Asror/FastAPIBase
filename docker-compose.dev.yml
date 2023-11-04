@@ -1,9 +1,9 @@
-version: '3'
+version: '3.9'
 
 networks:
   fastapi-network:
     driver: bridge
-#    name: fastapi-network
+    name: fastapi-network
 
 services:
 
@@ -25,7 +25,7 @@ services:
       - fastapi-network
 
   postgresql:
-#    container_name: ${PROJECT_NAME}-postgresql
+    container_name: ${PROJECT_NAME}-postgresql
     hostname: ${PROJECT_NAME}-postgresql
     image: postgres:15
     restart: always
@@ -44,11 +44,11 @@ services:
     tty: true
 
   redis:
-#    container_name: ${PROJECT_NAME}-redis
+    container_name: ${PROJECT_NAME}-redis
     hostname: ${PROJECT_NAME}-redis
     image: redis:alpine
     env_file:
-      - .docker/dev/redis/config.ini
+      - .dev.env
     ports:
       - ${REDIS_PORT:-6379}:6379
     volumes:
