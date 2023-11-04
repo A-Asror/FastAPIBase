@@ -12,11 +12,11 @@ services:
     image: postgres:15
     restart: unless-stopped
     environment:
-      POSTGRES_USER: fast-api-base-project-postgres-user
-      POSTGRES_HOST: localhost
+#      POSTGRES_HOST: localhost
       POSTGRES_PORT: 5432
-      POSTGRES_DB: fast-api-base-project-postgres-name
-      POSTGRES_PASSWORD: fast-api-base-project-postgres-password
+      POSTGRES_DB: your_database_name
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
 #    env_file:
 #      - .docker/dev/postgresql/config.ini
     volumes:
