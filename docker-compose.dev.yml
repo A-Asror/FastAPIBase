@@ -25,7 +25,7 @@ services:
       - fastapi-network
 
   postgresql:
-    container_name: ${PROJECT_NAME}-postgresql
+    container_name: ${PROJECT_NAME}
     hostname: ${PROJECT_NAME}-postgresql
     image: postgres:15
     restart: always
