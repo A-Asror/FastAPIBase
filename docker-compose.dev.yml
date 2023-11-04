@@ -54,6 +54,8 @@ services:
     volumes:
       - redis:/data
 #      - .docker/dev/redis/sysctl.conf:/etc/sysctl.conf
+    build:
+      context: ./
     tty: true
     restart: unless-stopped
     networks:
