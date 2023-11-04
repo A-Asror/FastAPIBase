@@ -51,7 +51,7 @@ services:
     ports:
       - ${REDIS_PORT:-6379}:6379
     volumes:
-      - redis:/data
+      - redis-data:/usr/local/etc/redis
 #      - .docker/dev/redis/sysctl.conf:/etc/sysctl.conf
     tty: true
     restart: unless-stopped
@@ -59,7 +59,7 @@ services:
       - fastapi-network
 
 volumes:
-  redis:
+  redis-data:
     driver: local
   postgresql_data:
     driver: local
