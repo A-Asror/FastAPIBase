@@ -20,7 +20,7 @@ services:
 #    env_file:
 #      - .docker/dev/postgresql/config.ini
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - postgres-data:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     networks:
@@ -43,5 +43,4 @@ services:
 volumes:
   redis:
     driver: local
-  postgres_data:
-    driver: local
+  postgres-data:
