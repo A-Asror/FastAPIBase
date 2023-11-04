@@ -14,7 +14,7 @@ services:
     env_file:
       - .docker/dev/postgresql/config.ini
     volumes:
-      - postgresql_data:/var/lib/postgresql/data
+      - postgresql_data:/data/postgres
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     networks:
@@ -28,7 +28,7 @@ services:
     ports:
       - ${REDIS_PORT:-6379}:6379
     volumes:
-      - redis:/data
+      - redis:/data/redis
     tty: true
     restart: unless-stopped
     networks:
