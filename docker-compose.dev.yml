@@ -11,12 +11,12 @@ services:
     hostname: ${PROJECT_NAME}-postgresql
     image: postgres:15
     restart: unless-stopped
-    environment:
+#    environment:
 #      POSTGRES_HOST: localhost
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: your_database_name
-      POSTGRES_USER: your_username
-      POSTGRES_PASSWORD: your_password
+#      POSTGRES_PORT: 5432
+#      POSTGRES_DB: your_database_name
+#      POSTGRES_USER: your_username
+#      POSTGRES_PASSWORD: your_password
 #    env_file:
 #      - .docker/dev/postgresql/config.ini
     volumes:
