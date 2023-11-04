@@ -14,7 +14,7 @@ services:
     env_file:
       - .docker/dev/postgresql/config.ini
     volumes:
-      - postgresql_data:/var/lib/postgresql/data/
+      - postgresql_data:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     networks:
