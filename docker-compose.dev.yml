@@ -3,7 +3,7 @@ version: '3'
 networks:
   fastapi-network:
     driver: bridge
-    name: fastapi-network
+    # name: fastapi-network
 
 services:
 
