@@ -3,7 +3,6 @@ version: '3'
 networks:
   fastapi-network:
     driver: bridge
-    # name: fastapi-network
 
 services:
 
@@ -43,8 +42,8 @@ services:
     tty: true
 
   redis:
-    container_name: "${PROJECT_NAME}-redis"
-    hostname: "${PROJECT_NAME}-redis"
+    container_name: ${PROJECT_NAME}
+    hostname: ${PROJECT_NAME}
     image: redis:alpine
     env_file:
       - .dev.env
