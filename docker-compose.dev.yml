@@ -9,12 +9,12 @@ services:
   postgresql:
     container_name: ${PROJECT_NAME}-postgresql
     hostname: ${PROJECT_NAME}-postgresql
-    image: postgres:15
-    restart: always
+    image: postgres:15-alpine
+    restart: unless-stopped
     env_file:
       - .docker/dev/postgresql/config.ini
     volumes:
-      - postgresql_data:/data/postgres
+      - postgres_data:/var/lib/postgresql/data/
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     networks:
@@ -37,5 +37,5 @@ services:
 volumes:
   redis:
     driver: local
-  postgresql_data:
+  postgres_data:
     driver: local
