@@ -12,6 +12,8 @@ services:
     hostname: ${PROJECT_NAME}-redis
     env_file:
       - .dev.env
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
     ports:
       - ${REDIS_PORT:-6379}:6379
     volumes:
