@@ -9,7 +9,7 @@ services:
   redis:
     container_name: "${REDIS_CONTAINER_NAME}"
     image: redis:alpine
-    hostname: ${REDIS_CONTAINER_NAME}
+    hostname: "${REDIS_CONTAINER_NAME}"
     env_file:
       - .dev.env
     ports:
