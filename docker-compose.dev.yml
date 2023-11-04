@@ -18,6 +18,7 @@ services:
       POSTGRES_USER: fast-api-base-project-postgres-user
       POSTGRES_PASSWORD: fast-api-base-project-postgres-password
     env_file:
+      - .env
       - .docker/dev/postgresql/config.ini
     volumes:
       - postgres-data:/var/lib/postgresql/data
