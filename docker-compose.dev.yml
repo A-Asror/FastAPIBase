@@ -26,7 +26,7 @@ services:
 
   postgresql:
     container_name: fast-api-base-project
-    hostname: ${PROJECT_NAME}-postgresql
+    hostname: fast-api-base-project
     image: postgres:15
     restart: always
     build:
