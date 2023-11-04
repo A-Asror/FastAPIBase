@@ -7,7 +7,7 @@ networks:
 services:
 
   redis:
-    container_name: "${PROJECT_NAME}-redis"
+    container_name: "${PROJECT_NAME}"
     image: redis:alpine
     hostname: "${PROJECT_NAME}-redis"
     env_file:
