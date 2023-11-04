@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3'
 
 networks:
   fastapi-network:
@@ -38,7 +38,6 @@ services:
       - postgresql_data:/var/lib/postgresql/data/
     ports:
       - ${POSTGRES_PORT:-5432}:5432
-
     networks:
       - fastapi-network
     tty: true
