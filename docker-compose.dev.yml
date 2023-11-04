@@ -43,7 +43,7 @@ services:
     tty: true
 
   redis:
-    container_name: ${PROJECT_NAME}
+    container_name: ${PROJECT_NAME}-redis
     hostname: ${PROJECT_NAME}-redis
     image: redis:alpine
     env_file:
