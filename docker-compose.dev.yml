@@ -11,8 +11,8 @@ services:
     hostname: ${PROJECT_NAME}-postgresql
     image: postgres:15-alpine
 #    restart: unless-stopped
-#    env_file:
-#      - .docker/dev/postgresql/config.ini
+    env_file:
+      - .docker/dev/postgresql/config.ini
 #    volumes:
 #      - postgres_data:/var/lib/postgresql/data/
 #    ports:
