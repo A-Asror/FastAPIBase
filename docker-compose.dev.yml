@@ -43,7 +43,7 @@ services:
     tty: true
 
   redis:
-    container_name: ${PROJECT_NAME}-redis
+    container_name: fast-api-base-project-redis
     hostname: ${PROJECT_NAME}-redis
     image: redis:alpine
     env_file:
