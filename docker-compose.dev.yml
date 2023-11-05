@@ -11,14 +11,14 @@ services:
     hostname: ${PROJECT_NAME}-postgresql
     image: postgres:15
     restart: unless-stopped
-    environment:
-      POSTGRES_USER: ${DB_POSTGRES_USER}
-      POSTGRES_PASSWORD: ${DB_POSTGRES_PASSWORD}
-      POSTGRES_DB: ${DB_POSTGRES_NAME}
-      POSTGRES_HOST: ${DB_POSTGRES_HOST}
-      POSTGRES_PORT: ${DB_POSTGRES_PORT}
-#    env_file:
-#      - .docker/dev/postgresql/config.ini
+#    environment:
+#      POSTGRES_USER: ${DB_POSTGRES_USER}
+#      POSTGRES_PASSWORD: ${DB_POSTGRES_PASSWORD}
+#      POSTGRES_DB: ${DB_POSTGRES_NAME}
+#      POSTGRES_HOST: ${DB_POSTGRES_HOST}
+#      POSTGRES_PORT: ${DB_POSTGRES_PORT}
+    env_file:
+      - .docker/dev/postgresql/config.ini
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
