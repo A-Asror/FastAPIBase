@@ -9,7 +9,7 @@ services:
   postgresql:
     container_name: ${PROJECT_NAME}-postgresql
     hostname: ${PROJECT_NAME}-postgresql
-    image: postgres:15
+    image: postgres:14-alpine
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${DB_POSTGRES_USER}
@@ -43,4 +43,4 @@ services:
 volumes:
   redis:
     driver: local
-  postgres-data:
+#  postgres-data:
