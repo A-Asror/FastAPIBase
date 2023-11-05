@@ -43,4 +43,4 @@ services:
 volumes:
   redis:
     driver: local
-#  postgres-data:
+  postgres-data:
